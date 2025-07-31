@@ -1,4 +1,5 @@
 <template>
+  <section class="container mx-auto">
   <div class="py-[70px]">
     <div class="relative z-40 flex flex-col gap-[23px] p-[32px] rounded-[8px] overflow-hidden">
       <img src="/images/home/catalog/imgBanner.jpg" class="absolute -top-5 right-0 lg:w-1/3 w-full" alt="" />
@@ -27,4 +28,5 @@
       </div>
     </div>
   </div>
+  </section>
 </template>

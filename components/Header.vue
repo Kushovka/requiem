@@ -45,13 +45,13 @@
     <section class="container mx-auto px-[16px] py-[24px]">
       <div class="flex-between">
         <!-- logo -->
-        <div class="flex items-center gap-[12px]">
+        <NuxtLink to="/" class="flex items-center gap-[12px]">
           <img src="/images/header/logo.svg" alt="" />
           <div class="flex flex-col">
             <h1 class="text-[18px] text-black01 font-semibold font-sans">РИТУАЛ #1</h1>
             <p class="text-[14px] text-gray01/60 font-sans font-medium">КАТАЛОГ ТОВАРОВ</p>
           </div>
-        </div>
+        </NuxtLink>
 
         <!-- search -->
         <div class="sm:flex hidden items-center border py-[12px] px-[16px] rounded-[6px] border-gray01/30 bg-gray01/10">

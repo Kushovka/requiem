@@ -1,4 +1,5 @@
 type catalogItem = {
+  id: number
   imgPath: string
   name: string
   price: string
@@ -7,6 +8,7 @@ type catalogItem = {
 }
 const catalogItems: catalogItem[] = [
   {
+    id: 1,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник стандартный М12',
     price: '35 880 руб.',
@@ -14,6 +16,7 @@ const catalogItems: catalogItem[] = [
     sale: '-10%'
   },
   {
+    id: 2,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник фигурный РИТУАЛ 8.1',
     price: '35 880 руб.',
@@ -21,6 +24,7 @@ const catalogItems: catalogItem[] = [
     sale: '-10%'
   },
   {
+    id: 3,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник ручной работы с орнаментом',
     price: '35 880 руб.',
@@ -28,6 +32,7 @@ const catalogItems: catalogItem[] = [
     sale: '-10%'
   },
   {
+    id: 4,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник стандартный',
     price: '35 880 руб.',
@@ -35,6 +40,7 @@ const catalogItems: catalogItem[] = [
     sale: '-10%'
   },
   {
+    id: 5,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник стандартный М12',
     price: '35 880 руб.',
@@ -42,6 +48,7 @@ const catalogItems: catalogItem[] = [
     sale: '-10%'
   },
   {
+    id: 6,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник фигурный РИТУАЛ 8.1',
     price: '35 880 руб.',
@@ -49,6 +56,7 @@ const catalogItems: catalogItem[] = [
     sale: '-10%'
   },
   {
+    id: 7,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник ручной работы с орнаментом',
     price: '35 880 руб.',
@@ -56,6 +64,7 @@ const catalogItems: catalogItem[] = [
     sale: '-10%'
   },
   {
+    id: 8,
     imgPath: '/images/home/catalog/memo.png',
     name: 'Памятник стандартный',
     price: '35 880 руб.',

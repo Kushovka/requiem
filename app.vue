@@ -1,14 +1,15 @@
 <script setup lang="ts">
-  import { RouterView } from 'vue-router'
+const nuxtApp = useNuxtApp()
+const isLoading = nuxtApp.$isLoading
 </script>
 
 <template>
+  <Loader v-if="isLoading" />
   <Header />
   <Nav />
   <main>
-    <RouterView />
+    <NuxtPage />
   </main>
-
   <Footer />
   <Banner />
 </template>
