@@ -11,6 +11,6 @@
       <div class="flex items-center justify-center pb-[48px] pt-[33px]">
         <span class="text-white01 sm:text-[16px]">© {{ new Date().getFullYear() }} Ритаул №1. Все права защищены.</span>
       </div>
-    </div>
+    </div> 
   </section>
 </template>
