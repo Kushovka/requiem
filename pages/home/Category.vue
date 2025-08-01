@@ -9,10 +9,10 @@
       <!-- title -->
       <div class="flex items-center gap-[24px]">
         <h1 class="sm:text-[30px] text-[20px] text-black01 font-sans font-medium sm:text-end">Основные категории товаров</h1>
-        <div class="flex-center">
-          <p class="text-[18px] text-gray01 font-sans font-normal">Все категории</p>
-          <Icon icon="iconoir:nav-arrow-right" class="text-gray01" width="24" height="24" />
-        </div>
+        <NuxtLink to="/catalogAllItems" class="flex-center group">
+          <p class="text-[18px] text-gray01 group-hover:text-black01 transition-colors duration-300  font-sans font-normal">Все категории</p>
+          <Icon icon="iconoir:nav-arrow-right" class="text-gray01 group-hover:text-black01 transition-colors duration-300 " width="24" height="24" />
+        </NuxtLink>
       </div>
       <!-- card -->
       <div class="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2  gap-[25px] h-full">

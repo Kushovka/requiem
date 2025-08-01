@@ -42,12 +42,12 @@
                 </div>
               </div>
             </div>
-            <div>
+            <NuxtLink to="/catalogAllItems">
               <button
                 class="bg-orange01 py-[12px] px-[16px] rounded-[6px] shadow-[0_4px_6px_rgba(236,99,27,0.5)] text-[18px] font-medium text-white">
                 Смотреть каталог
               </button>
-            </div>
+            </NuxtLink>
           </div>
         </div>
         <!-- rigth card -->
@@ -57,12 +57,12 @@
               <h1 class="text-[32px] text-black01/80 font-bold">Все виды ритуальных услуг и товаров</h1>
               <p class="text-[26px] text-black01/80 font-normal">в Нижнем Тагиле</p>
             </div>
-            <div>
+            <NuxtLink to="/catalogAllItems">
               <button
                 class="bg-orange01 py-[12px] px-[16px] rounded-[6px] shadow-[0_4px_6px_rgba(236,99,27,0.5)] text-[18px] font-medium text-white">
                 Смотреть каталог
               </button>
-            </div>
+            </NuxtLink>
           </div>
           <img
             src="/public/images/home/heroBanner/img2.png"
