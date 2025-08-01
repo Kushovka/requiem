@@ -19,7 +19,7 @@
   <section class="container mx-auto px-[16px] pt-[50px]">
     <div v-if="product" class="flex flex-col gap-[40px]">
       <!-- nav stroke -->
-      <div class="flex items-center gap-[18px]">
+      <div class="md:flex hidden items-center gap-[18px] ">
         <NuxtLink
           to="/"
           class="text-[16px] text-gray01 font-normal font-sans hover:text-black01 transition-colors duration-300">
@@ -35,7 +35,7 @@
         <p class="text-[16px] text-black01 font-normal font-sans">Конструктор</p>
       </div>
 
-      <div class="flex justify-between items-center">
+      <div class="flex flex-col lg:flex-row justify-between gap-[32px] items-center ">
         <!-- left -->
         <div class="flex flex-col-reverse items-center justify-center gap-[40px]">
           <!-- img -->
@@ -76,7 +76,7 @@
         </div>
 
         <!-- right -->
-        <div class="w-1/2 flex flex-col gap-[16px]">
+        <div class="lg:w-1/2 w-full grid lg:grid-cols-1 md:grid-cols-2 gap-[16px]">
           <!-- 1 -->
           <div class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
             <div class="flex flex-col gap-[6px]">
@@ -114,13 +114,13 @@
           </div>
 
           <!-- btn -->
-          <div class="flex gap-[12px]">
+          <div class="flex lg:col-span-1 md:col-span-2 gap-[12px]">
             <button
               class="block bg-orange01/10 py-[12px] px-[16px] rounded-[6px]  text-[18px] font-medium text-white">
               <Icon icon="tabler:arrow-narrow-left" class="text-orange01" width="32" height="32" />
             </button>
             <button
-              class="block bg-orange01/10 py-[12px] px-[16px] rounded-[6px]  text-[18px] font-medium text-orange01">
+              class="sm:block hidden bg-orange01/10 py-[12px] px-[16px] rounded-[6px]  text-[18px] font-medium text-orange01">
               Заказать
             </button>
             <button
