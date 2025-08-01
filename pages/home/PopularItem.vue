@@ -9,7 +9,7 @@
       <!-- left -->
       <div class="flex flex-col gap-[40px] w-[95%]">
         <!-- title + click -->
-        <div class="flex sm:flex-row flex-col gap-[20px] items-center justify-between ">
+        <div class="flex sm:flex-row flex-col gap-[20px] items-center justify-between">
           <div class="flex items-center gap-[24px]">
             <h1 class="sm:text-[30px] text-[20px] text-black01 font-sans font-medium sm:text-end">Популярные товары</h1>
             <div class="flex-center">
@@ -29,35 +29,37 @@
         </div>
 
         <!-- card -->
-        <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-[35px] items-stretch h-full">
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-[35px] items-stretch">
           <div
             v-for="(popularItem, idx) in popularItems"
             :key="idx"
             :class="[
               'flex',
               'flex-col',
-              'h-full',
-              'gap-[16px]',
               'group/card',
               'cursor-pointer',
+              'flex-1',
               idx === 2 ? 'hidden md:block' : '',
-              idx === 1 ? 'hidden sm:block' : '',
+              idx === 1 ? 'hidden sm:block' : ''
             ]">
-            <div class="w-full bg-orange01/[6%] h-full relative flex items-center justify-center rounded-[6px]">
-              <img :src="popularItem.imgPath" alt="" class="w-[60%] h-[60%] object-contain" />
+            <div
+              class="w-full relative bg-orange01/[6%] rounded-[6px] flex justify-center items-center flex-shrink-0"
+              style="height: 400px">
+              <img :src="popularItem.imgPath" alt="" class="w-[50%] object-contain" />
               <div class="absolute top-5 right-5 rounded-[6px] bg-orange01/[12%] p-[12px]">
-                <img src="/images/home/popularItem/like.svg" class=" " alt="" />
+                <img src="/images/home/popularItem/like.svg" alt="" />
               </div>
             </div>
-            <div>
-              <div>
-                <h2 class="lg:text-[22px] text-[16px] text-black01 font-semibold 2xl:w-[80%]">
-                  {{ popularItem.title }}
-                </h2>
-              </div>
 
-              <div class="flex flex-col">
-                <h2 class="lg:text-[26px] text-[20px] font-semibold text-orange01">{{ popularItem.price }}</h2>
+            <div class="flex flex-col flex-grow">
+              <h2 class="lg:text-[22px] text-[16px] text-black01 font-semibold 2xl:w-[80%]">
+                {{ popularItem.title }}
+              </h2>
+
+              <div class="flex flex-col mt-auto">
+                <h2 class="lg:text-[26px] text-[20px] font-semibold text-orange01">
+                  {{ popularItem.price }}
+                </h2>
                 <div class="flex-between">
                   <div class="flex gap-[12px]">
                     <h2 class="lg:text-[18px] text-[16px] font-normal text-gray01 line-through">

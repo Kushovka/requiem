@@ -1,34 +1,77 @@
+<script setup lang="ts">
+  import { Icon } from '@iconify/vue'
+
+  const activeTab = ref<'description' | 'media'>('description')
+  const isInfoOpen = ref(false)
+  const isDescOpen = ref(false)
+</script>
 <template>
   <section class="container mx-auto px-[16px] py-[50px]">
-    <div class="flex gap-[20px]">
+    <div class="flex sm:flex-row flex-col gap-[20px]">
       <!-- left -->
       <div class="flex flex-col gap-[20px] w-[95%]">
         <div class="flex gap-[12px]">
-          <h1 class="text-[22px] text-orange01 font-semibold">Описание модели</h1>
-          <h1 class="text-[22px] text-gray01/60 font-semibold">Фото/видео</h1>
+          <h1
+            class="text-[22px] font-semibold cursor-pointer"
+            :class="activeTab === 'description' ? 'text-orange01' : 'text-gray01/60'"
+            @click="activeTab = 'description'">
+            Описание модели
+          </h1>
+          <h1
+            class="text-[22px] font-semibold cursor-pointer"
+            :class="activeTab === 'media' ? 'text-orange01' : 'text-gray01/60'"
+            @click="activeTab = 'media'">
+            Фото/видео
+          </h1>
         </div>
-        <div class="w-full h-[1px] bg-black01"></div>
-        <div class="flex flex-col gap-[14px] text-[20px] text-gray01 font-medium">
-          <p>
+        <div class="w-full h-[2px] bg-gray01/30"></div>
+
+        <div
+          v-if="activeTab === 'description'"
+          class="flex flex-col gap-[14px] lg:text-[20px] md:text-[18px] text-gray01 font-medium">
+          <div v-if="!isDescOpen" @click="isDescOpen = true" class="cursor-pointer">
             Памятник М12 из карельского гранита габбро-диабаз. Монумент ассоциируется с землёй и стабильностью за счёт
-            своей прямоугольной формы. На фоне строгих линий гармонично смотрится оформление верхней части стелы.
-            Контуры волны переходят в арочный изгиб — словно размеренное течение жизни нашло свое дальнейшее продолжение
-            на небесном своде. Подобное оформление придаёт памятнику лёгкость и мягкость
-          </p>
-          <p>
-            Памятник из габбро-диабаза обладает красивой текстурой и глубоким тёмным цветом. Полировка поверхности
-            придаёт ему зеркальный блеск и элегантный вид. На данном памятнике эффектно будет смотреться портрет и любая
-            гравировка
-          </p>
-          <p>Все параметры можно корректировать и выбрать оптимальную цену</p>
+            своей прямоугольной ...
+            <span class="text-gray01/80">eще</span>
+          </div>
+
+          <div v-else @click="isDescOpen = false" class="cursor-pointer">
+            <p>
+              Памятник М12 из карельского гранита габбро-диабаз. Монумент ассоциируется с землёй и стабильностью за счёт
+              своей прямоугольной формы. На фоне строгих линий гармонично смотрится оформление верхней части стелы.
+              Контуры волны переходят в арочный изгиб — словно размеренное течение жизни нашло свое дальнейшее
+              продолжение на небесном своде. Подобное оформление придаёт памятнику лёгкость и мягкость
+            </p>
+            <p>
+              Памятник из габбро-диабаза обладает красивой текстурой и глубоким тёмным цветом. Полировка поверхности
+              придаёт ему зеркальный блеск и элегантный вид. На данном памятнике эффектно будет смотреться портрет и
+              любая гравировка
+            </p>
+            <p class="text-gray01/60">Все параметры можно корректировать и выбрать оптимальную цену</p>
+          </div>
+        </div>
+
+        <div v-else class="flex items-center flex-col gap-[14px] lg:text-[20px] md:text-[18px] text-gray01 font-medium">
+          <!-- Здесь может быть галерея или видео -->
+          <p>Тут будут фото и видео памятника</p>
         </div>
       </div>
       <!-- right -->
-      <div class="flex flex-col gap-[16px]">
-        <div>
+      <div class="flex items-center flex-col gap-[16px]">
+        <div class="flex items-center cursor-pointer select-none" @click="isInfoOpen = !isInfoOpen">
           <h1 class="text-[20px] text-orange01 font-semibold">Доп. информация</h1>
+          <Icon
+            icon="meteor-icons:chevron-down"
+            width="16"
+            height="16"
+            :style="{ color: '#EC631B' }"
+            :class="[
+              'transition-transform duration-300 ml-2',
+              { 'rotate-0': isInfoOpen, 'rotate-[-90deg]': !isInfoOpen }
+            ]" />
         </div>
-        <div class="flex flex-col gap-[12px]">
+
+        <div v-show="isInfoOpen" class="flex flex-col gap-[12px] transition-all duration-300">
           <div>
             <h1 class="text-[20px] text-black01 font-semibold">Размеры:</h1>
           </div>

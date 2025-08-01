@@ -7,18 +7,30 @@
   const productId = route.params.id
 
   const product = catalogItems.find(item => String(item.id) === String(productId))
+  const selectedImage = ref(product?.images?.[0] ?? product?.imgPath ?? '')
 
-  // Для наведения (по одному флагу для каждой иконки)
   const hoveredIcon1 = ref(false)
-  const hoveredIcon2 = ref(false)
   const hoveredIcon3 = ref(false)
 </script>
 
 <template>
   <section class="container mx-auto px-[16px] pt-[50px]">
     <div v-if="product">
-      <div class="flex items-center justify-center">
-        <img :src="product.imgPath" class="w-[472px]" alt="" />
+      <div class="flex lg:flex-row flex-col items-center justify-center gap-[40px]">
+        <div class="flex sm:flex-row flex-col-reverse gap-[24px]">
+          <div class="flex sm:flex-col flex-row gap-2">
+            <img
+              v-for="(img, index) in product.images"
+              :key="index"
+              :src="img"
+              class="w-20 h-20 object-cover cursor-pointer"
+              :class="{ 'bg-gray01/15 rounded-[8px]': img === selectedImage }"
+              @click="selectedImage = img" />
+          </div>
+          <div class="sm:w-[472px] sm:h-[472px] w-[342px] h-[342px] bg-gray01/15 rounded-[8px]">
+            <img :src="selectedImage" class="w-full h-full object-cover rounded-[8px]" alt="" />
+          </div>
+        </div>
         <div class="flex flex-col gap-[32px]">
           <div class="flex flex-col gap-[24px]">
             <div class="flex flex-col gap-[10px]">
@@ -57,10 +69,10 @@
                 </span>
               </div>
 
-              <!-- btn -->
+              <!-- btn lg -->
               <button
-                class="bg-orange01 py-[12px] px-[16px] rounded-[6px] shadow-[0_4px_6px_rgba(236,99,27,0.5)] text-[18px] font-medium text-white">
-               Оформить заказ
+                class="block bg-orange01 py-[12px] px-[16px] rounded-[6px] shadow-[0_4px_6px_rgba(236,99,27,0.5)] text-[18px] font-medium text-white">
+                Оформить заказ
               </button>
 
               <!-- icon3 -->
@@ -74,6 +86,7 @@
                   alt="profIcon" />
               </div>
             </div>
+
             <span class="text-[16px] text-gray01 font-medium">
               Цена указана за минимальный комплект: стела, постамент и цветник
               <br />

@@ -16,7 +16,8 @@
       <h1 class="text-[30px] text-black01 font-medium">Популярные памятники из нашего каталога</h1>
       <!-- catalog 1 -->
       <div class="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-[40px] h-full">
-        <NuxtLink :to="`/${catalogItem.id}`"
+        <NuxtLink
+          :to="`/${catalogItem.id}`"
           v-for="(catalogItem, idx) in catalogItems"
           :key="idx"
           class="flex flex-col justify-between h-full group/card cursor-pointer">
@@ -99,7 +100,8 @@
       <BannerCatalog />
       <!-- catalog 2 -->
       <div class="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-[40px] h-full">
-        <div
+        <NuxtLink
+          :to="`/${catalogItem.id}`"
           v-for="(catalogItem, idx) in catalogItems"
           :key="idx"
           :class="[
@@ -184,7 +186,7 @@
             </div>
             <div></div>
           </div>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </section>
