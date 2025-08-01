@@ -1,9 +1,12 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { useRoute } from 'vue-router'
+  import { Icon } from '@iconify/vue'
+  import { useRoute, useRouter } from 'vue-router'
   import catalogItems from '~/composables/home/catalogItems/catalogItems'
 
   const route = useRoute()
+  const router = useRouter()
+
   const productId = route.params.id
 
   const product = catalogItems.find(item => String(item.id) === String(productId))
@@ -11,11 +14,31 @@
 
   const hoveredIcon1 = ref(false)
   const hoveredIcon3 = ref(false)
+
+  function goToConstructor() {
+    if (productId) {
+      router.push(`/constructor/${productId}`)
+    }
+  }
 </script>
 
 <template>
   <section class="container mx-auto px-[16px] pt-[50px]">
-    <div v-if="product">
+    <div v-if="product" class="flex flex-col gap-[40px]">
+      <!-- nav stroke -->
+      <div class="flex items-center gap-[18px]">
+        <NuxtLink
+          to="/"
+          class="text-[16px] text-gray01 font-normal font-sans hover:text-black01 transition-colors duration-300">
+          Главная
+        </NuxtLink>
+        <Icon icon="meteor-icons:chevron-right" width="16" height="16" :style="{ color: '#9DA1AA' }" />
+        <p class="text-[16px] text-gray01 font-normal font-sans">Каталог</p>
+        <Icon icon="meteor-icons:chevron-right" width="16" height="16" :style="{ color: '#9DA1AA' }" />
+        <p class="text-[16px] text-gray01 font-normal font-sans">Классические памятники</p>
+        <Icon icon="meteor-icons:chevron-right" width="16" height="16" :style="{ color: '#9DA1AA' }" />
+        <p class="text-[16px] text-black01 font-normal font-sans">Памятник прямоугольный вертикальный</p>
+      </div>
       <div class="flex lg:flex-row flex-col items-center justify-center gap-[40px]">
         <div class="flex sm:flex-row flex-col-reverse gap-[24px]">
           <div class="flex sm:flex-col flex-row gap-2">
@@ -58,7 +81,8 @@
               <div
                 class="flex border py-[10px] md:px-[37px] px-[16px] gap-[5px] rounded-[6px] hover:bg-pink01 transition-colors duration-300 cursor-pointer group"
                 @mouseenter="hoveredIcon1 = true"
-                @mouseleave="hoveredIcon1 = false">
+                @mouseleave="hoveredIcon1 = false"
+                @click="goToConstructor">
                 <img
                   class="cursor-pointer"
                   :src="hoveredIcon1 ? '/images/home/catalog/icon1Hover.svg' : '/images/home/catalog/icon1.svg'"
