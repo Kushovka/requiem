@@ -9,12 +9,16 @@
       <!-- left -->
       <div class="flex items-center xl:gap-[56px] lg:gap-[30px] gap-[20px]">
         <!-- btn -->
-        <div>
-          <button class="flex items-center xl:px-[16px] lg:px-[12px] xl:py-[12px] lg:py-[10px] sm:px-[16px] sm:py-[12px] px-[12px] py-[12px]  rounded-[6px] bg-orange01 gap-[17px]">
+        <NuxtLink to="/catalogAllItems">
+          <button
+            class="flex items-center xl:px-[16px] lg:px-[12px] xl:py-[12px] lg:py-[10px] sm:px-[16px] sm:py-[12px] px-[12px] py-[12px] rounded-[6px] bg-orange01 gap-[17px]">
             <img src="/images/nav/icon.svg" alt="" />
-            <span class="xl:text-[18px] sm:block hidden lg:text-[16px] whitespace-nowrap font-medium font-sans text-white">Каталог по категориям</span>
+            <span
+              class="xl:text-[18px] sm:block hidden lg:text-[16px] whitespace-nowrap font-medium font-sans text-white">
+              Каталог по категориям
+            </span>
           </button>
-        </div>
+        </NuxtLink>
         <!-- items -->
         <div class="lg:flex hidden items-center xl:gap-[40px] lg: gap-[20px]">
           <div
@@ -29,15 +33,15 @@
         </div>
       </div>
       <!-- rigth -->
-      <div class="flex items-center xl:gap-[20px] ">
+      <div class="flex items-center xl:gap-[20px]">
         <div
           class="flex items-center gap-[10px] hover:bg-gray01/[10%] py-[12px] px-[16px] rounded-[8px] cursor-pointer transition-colors duration-300">
-          <Icon icon="mdi:truck-outline" width="24" height="24" style="{{" color="#9DA1AA" }} />
+          <Icon icon="mdi:truck-outline" width="24" height="24" :style="{ color: '#9DA1AA' }" />
           <span class="text-[18px] sm:block hidden text-gray01 font-sans font-normal">Доставка</span>
         </div>
         <div
           class="flex items-center gap-[10px] hover:bg-gray01/[10%] py-[12px] px-[16px] rounded-[8px] cursor-pointer transition-colors duration-300">
-          <Icon icon="mdi:help-circle-outline" width="24" height="24" style="{{" color="#9DA1AA" }} />
+          <Icon icon="mdi:help-circle-outline" width="24" height="24" :style="{ color: '#9DA1AA' }" />
           <span class="text-[18px] text-gray01 sm:block hidden font-sans font-normal">Помощь</span>
         </div>
       </div>

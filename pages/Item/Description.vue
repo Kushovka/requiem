@@ -26,16 +26,36 @@
         </div>
         <div class="w-full h-[2px] bg-gray01/30"></div>
 
+        <!-- text -->
         <div
           v-if="activeTab === 'description'"
           class="flex flex-col gap-[14px] lg:text-[20px] md:text-[18px] text-gray01 font-medium">
-          <div v-if="!isDescOpen" @click="isDescOpen = true" class="cursor-pointer">
-            Памятник М12 из карельского гранита габбро-диабаз. Монумент ассоциируется с землёй и стабильностью за счёт
-            своей прямоугольной ...
-            <span class="text-gray01/80">eще</span>
+          <!-- mobile -->
+          <div class="flex md:hidden">
+            <div v-if="!isDescOpen" @click="isDescOpen = true" class="cursor-pointer">
+              Памятник М12 из карельского гранита габбро-диабаз. Монумент ассоциируется с землёй и стабильностью за счёт
+              своей прямоугольной ...
+              <span class="text-gray01/80">ещё</span>
+            </div>
+
+            <div v-else @click="isDescOpen = false" class="flex flex-col gap-[12px] cursor-pointer">
+              <p>
+                Памятник М12 из карельского гранита габбро-диабаз. Монумент ассоциируется с землёй и стабильностью за
+                счёт своей прямоугольной формы. На фоне строгих линий гармонично смотрится оформление верхней части
+                стелы. Контуры волны переходят в арочный изгиб — словно размеренное течение жизни нашло свое дальнейшее
+                продолжение на небесном своде. Подобное оформление придаёт памятнику лёгкость и мягкость
+              </p>
+              <p>
+                Памятник из габбро-диабаза обладает красивой текстурой и глубоким тёмным цветом. Полировка поверхности
+                придаёт ему зеркальный блеск и элегантный вид. На данном памятнике эффектно будет смотреться портрет и
+                любая гравировка
+              </p>
+              <p class="text-gray01/60">Все параметры можно корректировать и выбрать оптимальную цену</p>
+            </div>
           </div>
 
-          <div v-else @click="isDescOpen = false" class="cursor-pointer">
+          <!-- desktop -->
+          <div class="hidden md:flex flex-col gap-[12px]">
             <p>
               Памятник М12 из карельского гранита габбро-диабаз. Монумент ассоциируется с землёй и стабильностью за счёт
               своей прямоугольной формы. На фоне строгих линий гармонично смотрится оформление верхней части стелы.
@@ -51,8 +71,8 @@
           </div>
         </div>
 
+        <!-- media -->
         <div v-else class="flex items-center flex-col gap-[14px] lg:text-[20px] md:text-[18px] text-gray01 font-medium">
-          <!-- Здесь может быть галерея или видео -->
           <p>Тут будут фото и видео памятника</p>
         </div>
       </div>
@@ -62,16 +82,33 @@
           <h1 class="text-[20px] text-orange01 font-semibold">Доп. информация</h1>
           <Icon
             icon="meteor-icons:chevron-down"
-            width="16"
-            height="16"
+            width="24"
+            height="24"
             :style="{ color: '#EC631B' }"
             :class="[
-              'transition-transform duration-300 ml-2',
+              'transition-transform duration-300 ml-2 block md:hidden',
               { 'rotate-0': isInfoOpen, 'rotate-[-90deg]': !isInfoOpen }
             ]" />
         </div>
+        <!-- mobile -->
+        <div v-show="isInfoOpen" class="flex flex-col gap-[12px] transition-all duration-300 md:hidden">
+          <div>
+            <h1 class="text-[20px] text-black01 font-semibold">Размеры:</h1>
+          </div>
+          <div class="flex flex-col gap-[4px] text-[18px] text-gray01 font-medium">
+            <p>80*40*8 см</p>
+            <p>90*45*8 см</p>
+            <p>100*45*8 см</p>
+            <p>100*50*8 см</p>
+            <p>110*55*8 см</p>
+            <p>120*60*8 см</p>
+            <p>120*70*8 см</p>
+            <p>140*70*8 см</p>
+          </div>
+        </div>
 
-        <div v-show="isInfoOpen" class="flex flex-col gap-[12px] transition-all duration-300">
+        <!-- desktop -->
+        <div class="flex-col gap-[12px] transition-all duration-300 hidden md:flex">
           <div>
             <h1 class="text-[20px] text-black01 font-semibold">Размеры:</h1>
           </div>
