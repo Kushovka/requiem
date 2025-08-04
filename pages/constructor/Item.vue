@@ -13,6 +13,23 @@
 
   const hoveredIcon1 = ref(false)
   const hoveredIcon3 = ref(false)
+
+  const isOpenStela = ref(false)
+  
+  function toggleStela() {
+  isOpenStela.value = !isOpenStela.value
+}
+  const isOpenPost = ref(false)
+  
+  function togglePost() {
+  isOpenPost.value = !isOpenPost.value
+}
+  const isOpenPlit = ref(false)
+  
+  function togglePlit() {
+  isOpenPlit.value = !isOpenPlit.value
+}
+
 </script>
 
 <template>
@@ -78,31 +95,74 @@
         <!-- right -->
         <div class="lg:w-1/2 w-full grid lg:grid-cols-1 md:grid-cols-2 gap-[16px]">
           <!-- 1 -->
-          <div class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
-            <div class="flex flex-col gap-[6px]">
-              <p class="text-[18px] text-gray01 font-normal">Стела</p>
-              <h2 class="text-[20px] text-black01 font-semibold">Размер 80*40*8 см</h2>
-            </div>
-            <Icon icon="meteor-icons:chevron-down" width="24" height="24" :style="{ color: '#9DA1AA' }" />
-          </div>
+          <div @click="toggleStela" class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
+  <div class="flex flex-col gap-[6px]">
+    <p class="text-[18px] text-gray01 font-normal">Стела</p>
+    <h2 class="text-[20px] text-black01 font-semibold">Размер 80*40*8 см</h2>
+  </div>
+  <Icon icon="meteor-icons:chevron-down" width="24" height="24" :style="{ color: '#9DA1AA' }" />
+</div>
+
+<!-- 1 - 2 -->
+<div v-if="isOpenStela" class="w-full border border-t-0 px-[34px] pb-[16px]">
+  <p class="text-[18px] text-gray01 font-medium">Выберите размер</p>
+  <div class="flex gap-[8px] mt-[8px]">
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">80*40*8 см</span></div>
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">90*45*8 см</span></div>
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">100*50*8 см</span></div>
+  </div>
+  <p class="text-gray-500 mt-[8px] text-[14px] leading-[1.4]">
+    * При выборе размеров, параметры стелы расчитываются как <br />высота * ширина * толщина
+  </p>
+</div>
+
 
           <!-- 2 -->
-          <div class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
-            <div class="flex flex-col gap-[6px]">
-              <p class="text-[18px] text-gray01 font-normal">Постамент</p>
-              <h2 class="text-[20px] text-black01 font-semibold">Размер 50*20*10 см</h2>
-            </div>
-            <Icon icon="meteor-icons:chevron-down" width="24" height="24" :style="{ color: '#9DA1AA' }" />
-          </div>
+          <div @click="togglePost" class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
+  <div class="flex flex-col gap-[6px]">
+    <p class="text-[18px] text-gray01 font-normal">Постамент</p>
+    <h2 class="text-[20px] text-black01 font-semibold">Размер 50*20*10 см</h2>
+  </div>
+  <Icon icon="meteor-icons:chevron-down" width="24" height="24" :style="{ color: '#9DA1AA' }" />
+</div>
+
+<!-- 2 - 2 -->
+<div v-if="isOpenPost" class="w-full border border-t-0 px-[34px] pb-[16px]">
+  <p class="text-[18px] text-gray01 font-medium">Выберите размер</p>
+  <div class="flex gap-[8px] mt-[8px]">
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">50*30*10 см</span></div>
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">60*45*15 см</span></div>
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">80*60*20 см</span></div>
+  </div>
+  <p class="text-gray-500 mt-[8px] text-[14px] leading-[1.4]">
+    * При выборе размеров, параметры стелы расчитываются как <br />высота * ширина * толщина
+  </p>
+</div>
+
+
 
           <!-- 3 -->
-          <div class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
-            <div class="flex flex-col gap-[6px]">
-              <p class="text-[18px] text-gray01 font-normal">Цветник / Надгробная плита</p>
-              <h2 class="text-[20px] text-black01 font-semibold">Цветник: 80*50/8*8 см</h2>
-            </div>
-            <Icon icon="meteor-icons:chevron-down" width="24" height="24" :style="{ color: '#9DA1AA' }" />
-          </div>
+          <div @click="togglePlit" class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
+  <div class="flex flex-col gap-[6px]">
+    <p class="text-[18px] text-gray01 font-normal">Цветник / Надгробная плита</p>
+    <h2 class="text-[20px] text-black01 font-semibold">Цветник: 80*50/8*8 см</h2>
+  </div>
+  <Icon icon="meteor-icons:chevron-down" width="24" height="24" :style="{ color: '#9DA1AA' }" />
+</div>
+
+<!-- 3 - 2 -->
+<div v-if="isOpenPlit" class="w-full border border-t-0 px-[34px] pb-[16px]">
+  <p class="text-[18px] text-gray01 font-medium">Выберите размер</p>
+  <div class="flex gap-[8px] mt-[8px]">
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">50*30*10 см</span></div>
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">60*45*15 см</span></div>
+    <div class="bg-orange01/[6%] rounded-[8px] py-[12px] px-[16px]"><span class="text-[18px] text-black01 font-semibold">80*60*20 см</span></div>
+  </div>
+  <p class="text-gray-500 mt-[8px] text-[14px] leading-[1.4]">
+    * При выборе размеров, параметры стелы расчитываются как <br />высота * ширина * толщина
+  </p>
+</div>
+
 
           <!-- 4 -->
           <div class="flex items-center justify-between w-full border py-[16px] px-[24px] rounded-[8px]">
