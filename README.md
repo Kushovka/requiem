@@ -70,7 +70,7 @@ The project is being developed as a modern multi-page website with a product cat
 <h1>📦 Installation</h1>
 
 ```bash
-git clone https://github.com/ТВОЙ_НИК/ritual-project.git
+git clone https://github.com/Kushovka/requiem.git
 
 cd ritual-project
 
