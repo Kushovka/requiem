@@ -72,7 +72,7 @@ The project is being developed as a modern multi-page website with a product cat
 ```bash
 git clone https://github.com/Kushovka/requiem.git
 
-cd ritual-project
+cd requiem
 
 npm install
 
