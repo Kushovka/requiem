@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Category from './catalogAllItems/Category.vue'
+import Category from "./catalogAllItems/Category.vue";
 </script>
 
 <template>
