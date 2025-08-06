@@ -80,22 +80,7 @@ npm run dev
 ```
 
 
-# 🚨 Disclaimer
-<br><br>
-<div>
-   <b>EN:<br/>
-  <p>
-    This project is a personal, non-commercial work created for portfolio purposes only. All brand names, images, and content are used for demonstration and educational purposes. I do not claim ownership of any third-party assets.
-  </p>
-</div>
-<br>
-<div>
-    <b>RU:<br/>
-  <p>
-    Этот проект является личной некоммерческой работой, созданной исключительно для портфолио. Все названия брендов, изображения и контент используются в демонстрационных и учебных целях. Я не претендую на права собственности на сторонние материалы.
-  </p>
-</div>
-<br>
+
 <h1>☎️ Connect with me </h1>
  <br>
     <div align="center">
