@@ -72,6 +72,7 @@ The project is being developed as a modern multi-page website with a product cat
   <li><strong>Frontend</strong>: <a href="https://github.com/Kushovka">Kirill / GitHub</a></li>
   <li><strong>Backend</strong>: Stepan</li>
   <li><strong>Design</strong>: Arseniy</li>
+  <li><strong>Team Lead</strong>: Nikita</li>
 </ul>
 
 <br><br>
