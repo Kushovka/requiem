@@ -1,4 +1,4 @@
-# 👉 **Ритуал №1** —NuxtJS + TypeScript + Vue
+# 👉 **[Ритуал №1](https://requiemm.netlify.app/)** —NuxtJS + TypeScript + Vue
 <br><br>
 <img width="1707" height="939" alt="image" src="https://github.com/user-attachments/assets/6125c0a5-3869-4b51-bbcf-5d43c84ba2b8" />
 <br><br>
