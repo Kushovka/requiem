@@ -25,7 +25,7 @@ The project is being developed as a modern multi-page website with a product cat
   
   <div align="center">
     
-  > ⚠️ Проект не завершён, так как я покинул компанию. Однако код и архитектура сайта полностью рабочие и могут быть доработаны.
+  > ⚠️ Проект не завершён. Однако код и архитектура сайта полностью рабочие и могут быть доработаны.
   </div>
   
   <br/>
@@ -66,16 +66,7 @@ The project is being developed as a modern multi-page website with a product cat
 </ul>
 <br><br>
 
-<h2>👨‍💻 Team</h2>
-<br>
-<ul>
-  <li><strong>Frontend</strong>: <a href="https://github.com/Kushovka">Kirill / GitHub</a></li>
-  <li><strong>Backend</strong>: Stepan</li>
-  <li><strong>Design</strong>: Arseniy</li>
-  <li><strong>Team Lead</strong>: Nikita</li>
-</ul>
 
-<br><br>
 
 <h1>📦 Installation</h1>
 
